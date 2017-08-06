@@ -54,4 +54,12 @@ public class BasicResponse<T> {
     public void setData(T data) {
         this.data = data;
     }
+    
+    public boolean whetherSuccess() {
+    	if(this.errno == 0) {
+    		return true;
+    	}else {
+    		return false;
+    	}
+    }
 }

@@ -8,8 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONObject;
 import org.junit.Test;
+
+import com.alibaba.fastjson.JSONObject;
 
 import cmcc.iot.onenet.javasdk.api.bindata.AddBindataApi;
 import cmcc.iot.onenet.javasdk.api.bindata.GetBindataApi;

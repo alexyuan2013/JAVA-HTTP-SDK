@@ -1,6 +1,8 @@
 package com.cmiot.onenet;
 
-import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSONObject;
+import com.cmiot.onenet.pojo.CmdStatus;
 
 import cmcc.iot.onenet.javasdk.api.cmds.QueryCmdsRespApi;
 import cmcc.iot.onenet.javasdk.api.cmds.QueryCmdsStatus;
@@ -15,17 +17,18 @@ import cmcc.iot.onenet.javasdk.response.datastreams.DatastreamsResponse;
 public class TestOneNet {
 	
 	public static String sendCmd() {
-		String devId = "10276326";
-		String key = "HM9fbweWQ00NzRUsWDdgrPHJnB8=";
-		String text = "{\"msgType\":0,\"cmdType\":1,\"SN\":\"113335500\"}";
-		SendCmdsApi api = new SendCmdsApi("10276326", null, null, null, text, key);
+		
+		String devId = "10921385";
+		String key = "ONmyvl5F5LoCQrrfNSFK5TtFd3U=";
+		String text = "{\"msgType\":0,\"cmdType\":1,\"SN\":\"102000217290000011\"}";
+		SendCmdsApi api = new SendCmdsApi(devId, null, null, null, text, key);
 		BasicResponse<NewCmdsResponse> response = api.executeApi();
 		//System.out.println(response.getData().getCmduuid());
 		return response.getData().getCmduuid();
 	}
 	
 	public static void getCmd(String cmdUuid) {
-		String key = "HM9fbweWQ00NzRUsWDdgrPHJnB8=";		
+		String key = "ONmyvl5F5LoCQrrfNSFK5TtFd3U=";		
 		QueryCmdsStatus apiStatus = new QueryCmdsStatus(cmdUuid,key);
 		BasicResponse<CmdsResponse> res = apiStatus.executeApi();
 		System.out.println(res.getJson());

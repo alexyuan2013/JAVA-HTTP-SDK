@@ -1,4 +1,4 @@
-package com.cmiot.onenet;
+package com.cmiot.onenet.pojo;
 
 public class CmdStatus {
 	private String errno;
